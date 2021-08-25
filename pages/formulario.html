@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,500&display=swap"
+        rel="stylesheet">
+    <link href="./styleformulario.css" rel="stylesheet" type="text/css" />
+
+    <script src="../scriptformulario.js"></script>
+
+    <script src="../main.js"></script>
+
+    <title>JobsNET</title>
+
+</head>
+<header>
+    <div class="logo">
+        <img src="./logo.jpg" alt="" width="110px">
+    </div>
+    <ul>
+        <li>
+            <a target="_blank" href="./home.html"> Home </a>
+        </li>
+        <li>
+            <a target="_blank" href="./formulario.html">Contato</a>
+        </li>
+    </ul>
+</header>
+
+<main>
+    <section class="container">
+        <div class="name">
+            <h1>JobsNET</h1>
+            <h5>- Recrutamento e Seleção -</h5><br><br>
+        </div>
+    </section>
+</main>
+
+<body>
+    <form action="" autocomplete="on" method="POST" min-height: 100vh>
+
+        <div class="dadosPessoais">
+            <h3>Formulário de Cadastro</h3><br><br>
+
+            <p>DADOS PESSOAIS</p><br>
+
+            <label for="name">Nome Completo:</label>
+            <span class="preenchimentoObrigatorio">*</span>
+            <input type="text" id="name" name="name" size="45" required />
+
+            <label for="identidade">n° Identidade:</label>
+            <input type="text" id="identidade" name="identidade" size="25" /><br><br>
+
+            <label for="CPF">CPF:</label>
+            <span class="preenchimentoObrigatorio">*</span>
+            <input type="text" id="CPF" name="CPF" size="25" placeholder="000.000.000-00" required />
+
+            <label for="dataNascimento">Data de Nascimento:</label>
+            <span class="preenchimentoObrigatorio">*</span>
+            <input type="date" id="dataNascimento" name="dataNascimento" required />
+
+            <label for="estadoCivil">Estado Civil:</label>
+            <select id="estadoCivil" name="estadoCivil">
+                <option value="espaco"></option>
+                <option value="solteiro">solteiro(a)</option>
+                <option value="casado">casado(a)</option>
+                <option value="separado">separado(a)</option>
+                <option value="viuvo">viúvo(a)</option>
+                <option value="uniaoEstavel">união estável</option>
+            </select><br><br>
+
+            <label for="cargo">Cargo Pretendido:</label>
+            <input type="text" id="cargo" name="cargo" size="30" />
+
+            <label for="profissao">Profissão:</label>
+            <span class="preenchimentoObrigatorio">*</span>
+            <input type="text" id="profissao" name="profissao" required />
+
+            <label for="sexo">Genero:</label>
+            <select id="sexo" name="sexo">
+                <option value="espaco"></option>
+                <option value="feminino">feminino</option>
+                <option value="masculino">masculino</option>
+                <option value="outros">outros</option>
+            </select> <br><br>
+
+            <label for="possuiVeiculo">Possui Veículo?</label>
+            <select id="possuiVeiculo" name="possuiVeiculo">
+                <option value="espaco"></option>
+                <option value="true">sim</option>
+                <option value="false">não</option>
+            </select>
+
+            <label for="habilitacao">Habilitação:</label>
+            <select id="habilitacao" name="habilitacao">
+                <option value="espaco"></option>
+                <option value="nao">Não</option>
+                <option value="CNHA">CNH A</option>
+                <option value="CNHB">CNH B</option>
+                <option value="CNHAB">CNH AB</option>
+            </select><br><br>
+
+            <label for="pcd">Deseja concorrer a vagas PCD:</label>
+            <input type="radio" name="pcd" id="sim" />
+            <label for="sim">Sim</label>
+            <input type="radio" name="pcd" id="nao" />
+            <label for="nao">Não</label><br><br>
+        </div>
+
+        <div class="dadosContato">
+
+            <p>DADOS PARA CONTATO</p><br>
+
+            <label for="telefoneFixo">Telefone Fixo:</label>
+            <input type="tel" id="telefoneFixo" name="telefoneFixo" size="15" placeholder="(xx)0000-0000" />
+
+            <label for="celular">Celular:</label>
+            <span class="preenchimentoObrigatorio">*</span>
+            <input type="tel" id="celular" name="celular" size="15" placeholder="(xx)00000-0000" required />
+
+            <label for="email">E-mail:</label>
+            <span class="preenchimentoObrigatorio">*</span>
+            <input type="e-mail" id="email" name="email" size="37" placeholder="nome@exemplo.com" required>
+            <span id="email_validation" class="error_message"></span><br><br>
+
+            <label>Cep:</label>
+            <span class="preenchimentoObrigatorio">*</span>
+            <input name="cep" type="text" id="cep" size="15" maxlength="9" onblur="pesquisacep(this.value);"
+                required />
+
+            <label>Endereço:</label>
+            <input name="rua" type="text" id="rua" size="50" required />
+
+            <label>Número:</label>
+            <input name="number" type="text" id="numero" size="8" required /><br><br>
+
+            <label>Complemento:</label>
+            <input name="complemento" type="text" id="complemento" size="22" />
+
+            <label>Bairro:</label>
+            <input name="bairro" type="text" id="bairro" size="15" required />
+
+            <label>Cidade:</label>
+            <input name="cidade" type="text" id="cidade" size="15" required />
+
+            <label>Estado:</label>
+            <input name="uf" type="text" id="uf" size="2" required /><br><br>
+        </div>
+
+        <div class="curriculo">
+            <label for="curriculo">Deixe aqui seu currículo:</label>
+            <input type="file" name="curriculo" id="curriculo" /><br><br>
+        </div>
+
+        <div class="button">
+            <input type="submit" value="Enviar formulário!">
+        </div>
+    </form><br><br>
+
+    <div class="rodape">
+        <p>
+            Projeto desenvolvido por Thais Ribeiro Frisselli
+        </p><br>
+        <label for="info">Para saber mais sobre mim acesse:
+            <ul>
+                <a target="_blank" href="https://github.com/ThaisFri"> Github</a><br>
+                <a target="_blank" href="https://www.linkedin.com/in/thais-ribeiro-frisselli/">LinkedIn</a>
+            </ul>
+        </label><br><br><br><br>
+    </div>
+</body>
+
+</html>
