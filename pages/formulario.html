@@ -5,18 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
-        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;1,500&display=swap" rel="stylesheet">
     <link href="./styleformulario.css" rel="stylesheet" type="text/css" />
 
     <script src="../scriptformulario.js"></script>
-
-    <script src="../main.js"></script>
+    <script src="../script.js"></script>
 
     <title>JobsNET</title>
 
@@ -45,7 +41,7 @@
 </main>
 
 <body>
-    <form action="" autocomplete="on" method="POST" min-height: 100vh>
+    <form action="/register" id="form_desafio" autocomplete="on" method="POST" min-height: 100vh>
 
         <div class="dadosPessoais">
             <h3>Formulário de Cadastro</h3><br><br>
@@ -61,7 +57,7 @@
 
             <label for="CPF">CPF:</label>
             <span class="preenchimentoObrigatorio">*</span>
-            <input type="text" id="CPF" name="CPF" size="25" placeholder="000.000.000-00" required />
+            <input type="text" id="cpf" name="CPF" size="25" placeholder="000.000.000-00" required />
 
             <label for="dataNascimento">Data de Nascimento:</label>
             <span class="preenchimentoObrigatorio">*</span>
@@ -84,8 +80,8 @@
             <span class="preenchimentoObrigatorio">*</span>
             <input type="text" id="profissao" name="profissao" required />
 
-            <label for="sexo">Genero:</label>
-            <select id="sexo" name="sexo">
+            <label for="genero">Genero:</label>
+            <select id="genero" name="genero">
                 <option value="espaco"></option>
                 <option value="feminino">feminino</option>
                 <option value="masculino">masculino</option>
@@ -131,27 +127,27 @@
             <input type="e-mail" id="email" name="email" size="37" placeholder="nome@exemplo.com" required>
             <span id="email_validation" class="error_message"></span><br><br>
 
-            <label>Cep:</label>
+            <label for="cep">Cep:</label>
             <span class="preenchimentoObrigatorio">*</span>
             <input name="cep" type="text" id="cep" size="15" maxlength="9" onblur="pesquisacep(this.value);"
                 required />
 
-            <label>Endereço:</label>
-            <input name="rua" type="text" id="rua" size="50" required />
+            <label for="endereco">Endereço:</label>
+            <input name="endereco" type="text" id="endereco" size="50" required />
 
-            <label>Número:</label>
+            <label for="numero">Número:</label>
             <input name="number" type="text" id="numero" size="8" required /><br><br>
 
-            <label>Complemento:</label>
-            <input name="complemento" type="text" id="complemento" size="22" />
+            <label for="complemento">Complemento:</label>
+            <input name="complemento" type="string" id="complemento" size="22" />
 
-            <label>Bairro:</label>
+            <label for="bairro">Bairro:</label>
             <input name="bairro" type="text" id="bairro" size="15" required />
 
-            <label>Cidade:</label>
+            <label for="cidade">Cidade:</label>
             <input name="cidade" type="text" id="cidade" size="15" required />
 
-            <label>Estado:</label>
+            <label for="uf">Estado:</label>
             <input name="uf" type="text" id="uf" size="2" required /><br><br>
         </div>
 
@@ -161,7 +157,7 @@
         </div>
 
         <div class="button">
-            <input type="submit" value="Enviar formulário!">
+            <input type="submit" id="button" value="Enviar formulário!">
         </div>
     </form><br><br>
 

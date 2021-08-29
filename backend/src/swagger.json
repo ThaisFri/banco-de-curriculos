@@ -1,0 +1,142 @@
+{
+  "openapi": "3.0.0",
+
+  "info": {
+    "title": "API Banco de Curriculos",
+    "description": "API do Desafio Banco de Dados - Start Tech/Gama Academy",
+    "version": "0.0.1"
+  },
+
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": "ambiente de desenvolvimento"
+    }
+  ],
+
+  "paths": {
+    "/register": {
+      "post": {
+        "responses": {
+          "301": {
+            "description": "Cadastro feito com sucesso."
+          },
+          "400": {
+            "description": "CPF já cadastrado."
+          },
+          "500": {
+            "description": "Ocorreu um erro. Tente novamente."
+          }
+        },
+        "summary": "Cadastro de candidato",
+        "description": "Rota de cadastro de usuário, recebe: nome, identidade, cpf, dataNascimento, estadoCivil, cargo, profissao, genero, possuiVeiculo, habilitacao, pcd, telefoneFixo, celular, email, cep, endereco, numero, complemento, bairro, uf, curriculo",
+        "tags": ["candidates"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "identidade": {
+                      "type": "number"
+                  },
+                  "cpf": {
+                      "type": "number"
+                  },
+                  "dataNascimento": {
+                      "type": "number" 
+                  }, 
+                  "estadoCivil": {
+                      "type": "string" 
+                  },
+                  "cargo": {
+                      "type":"string"
+                  },
+                  "profissao": {
+                    "type": "string"
+                },
+                "genero": {
+                    "type": "string"
+                },
+                "possuiVeiculo": {
+                    "type": "string"
+                },
+                "habilitacao": {
+                    "type": "string"
+                },
+                "pcd": {
+                    "type": "string"
+                },
+                "telefoneFixo": {
+                    "type": "number"
+                },
+                "celular": {
+                    "type": "number"
+                },
+                "email": {
+                    "type": "string" 
+                },
+                "cep": {
+                    "type": "number" 
+                },
+                "endereco": {
+                    "type": "string" 
+                },
+                "numero": {
+                    "type": "number" 
+                },
+                "complemento": {
+                    "type": "string" 
+                },
+                "bairro": {
+                    "type": "string" 
+                },
+                "cidade": {
+                    "type": "string"
+                },
+                "uf": {
+                  "type": "string" 
+              },
+              "curriculo": {
+                  "type": "string"
+              }
+                }
+              },
+              "examples": {
+                "text": {
+                  "value": {
+                      "nome": "Fulana de Tal",
+                      "identidade": "000000000",
+                      "cpf": "000000000-00",
+                      "dataNascimento": "25-03-1990", 
+                      "estadoCivil": "solteira",
+                      "cargo": "desenvolvedor fullstack",
+                      "profissao": "tecnico em TI",
+                      "genero": "feminino",
+                      "possuiVeiculo": "não",
+                      "habilitacao": "não",
+                      "pcd": "não",
+                      "telefoneFixo": "(00)0000-0000",
+                      "celular": "(00)00000-0000",
+                      "email": "fulanadetal@exemplo.com",
+                      "cep": "00000-000",
+                      "endereco": "Rua dos Bobos",
+                      "numero": "0",
+                      "complemento": "bloco 0",
+                      "bairro": "Centro",
+                      "cidade": "não existe",
+                      "uf": "SP"
+                  }
+                }
+              }
+            }
+          }
+               
+        }
+        
+      }
+    }
+  }
+}
